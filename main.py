@@ -31,3 +31,11 @@ for i, componenteConexa in enumerate(componentesConexas):
 for i, arbol in enumerate(arboles_recubridores_minimal):
     print(f"Árbol recubridor mínimo para la componente conexa {i}:")
     print(arbol.edges(data=True))
+
+# Calcular el peso total de cada árbol recubridor mínimo
+pesos_arboles = []
+
+for i, arbol in enumerate(arboles_recubridores_minimal):
+    peso_total = sum(weight for _, _, weight in arbol.edges(data='weight'))
+    pesos_arboles.append(peso_total)
+    print(f"Peso total del árbol recubridor mínimo para la componente conexa {i}: {peso_total}")
